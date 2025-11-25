@@ -1,0 +1,8 @@
+numpy
+pandas
+scikit-learn
+imbalanced-learn
+flask
+joblib
+pytest
+python-dotenv
