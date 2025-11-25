@@ -1,0 +1,50 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg*
+*.egg-info/
+dist/
+build/
+*.log
+
+#Venv
+venv/
+.venv/
+env/
+ENV/
+*.swp
+
+# Jupyter Notebook
+.ipynb_checkpoint/
+
+# Pycharm
+.idea/
+*.iml
+
+# Data files
+data/raw/*
+!data/raw/.gitkeep
+
+# processed data
+data/processed/*
+!data/processed/.gitkeep
+
+#Model
+model/*
+!model/.gitkeep
+
+# Logs
+logs/
+*.tmp
+*.temp
+*.cache
+
+# OS specific junk
+.DS_Store
+Thumbs.db
+
+# Python config
+.pytest_cache/
