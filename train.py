@@ -146,15 +146,16 @@ def artiSave(best):
 
     artifact = {
         "pipeline": best["pipeline"],
-        "val_threshold": best["val_threshold"],
+        "threshold": best["val_threshold"],
         "meta": {
             "name": best["name"],
             "random_state": RANDOM_STATE
         }
     }
 
-    joblib.dump(artifact, MODELDIRPATH / f"{best['name']}.joblib")
-    print(f"Model saved. Artifact to -> {MODELDIRPATH}")
+    joblib.dump(artifact, MODELDIRPATH / "best_model.pkl")
+    print(f"Model saved to -> {MODELDIRPATH / 'best_model.pkl'}")
+
 
 def main():
     df = dataloader()
