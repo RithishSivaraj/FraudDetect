@@ -6,3 +6,4 @@ flask
 joblib
 pytest
 python-dotenv
+requests
