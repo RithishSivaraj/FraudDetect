@@ -7,7 +7,7 @@ This project, contains an end-to-end fraud detection system. The pipeline trains
 - **Threshold Tuning** - The threshold is chosen, through maxmimized optimal F1 scores, rather than the usual default of 0.5.
 - **Training Pipeline** - The training pipeline is designed to leak free with train/val/test split with train-only scaling, and train-only SMOTE.
 - **Simulates Live Transaction** - the streamer is designed to simulate live transaction, with delays on transaction arrival.
-- ** Real-time Inference Decisions** - The Flask REST API produces fraud probabilites and classifies records as fraud or not through threshold-based decisions.
+- **Real-time Inference Decisions** - The Flask REST API produces fraud probabilites and classifies records as fraud or not through threshold-based decisions.
 
 ## Tech Stack:
 Ensure the below mentioned are downloaded in your project env:
