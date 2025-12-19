@@ -41,3 +41,19 @@ For this project, I chose to use the **Credit Card Fraud Detection** dataset, na
 
 Choosing these metrics as accuracy is misleading with extreme class imbalance, as seen with this dataset, and PR-AUC/Recall reflect performance stats better on fraud cases, were existence of fraud is rare.
 
+## How it all works?
+The pipeline follows a few simple but powerful steps:
+After confirming dataset specific features and problems you would face, and after preprocessing:
+1. train.py -
+   - splits the dataset into train/val/test, and scales features.
+   - Then apply SMOTE only for training set.
+   - Train the different candidate pipelines (Used Logistic regression and Random Forest Classifier for the above)
+   - Select the best model using the validation metrics
+   - Save the model into model/best_model.pkl to be loaded into API later.
+2. app/api.py -
+   - Loads the artifact of model
+   - Only loads once at startup initialization
+   - exposes /predict.
+3. stream/producer.py -
+   - Streams each record from the dataset as transactions into the loaded model in API, in order to simulate live transactions.
+  
