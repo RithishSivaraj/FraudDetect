@@ -23,10 +23,10 @@ Ensure the below mentioned are downloaded in your project env:
 For this project, I chose to use the **Credit Card Fraud Detection** dataset, named in my files as 'creditcard.csv'. The dataset was found on Kaggle, and can be downloaded following this website: https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud
 
 ## In this repo:
-train.py              # for training, evaluating and saving artifact of models.
-app/api.py            # Flask REST API for inference
-app/modelLoader.py    # Helper functions to load artifact of model, and prepare input data from JSON to DataFrame
-stream/producer.py    # File for simulator of transaction to be streamed directly to API
-notebooks/            # contains any exploratory analysis Jupyter notebooks to analyze, and understand dataset.
-model/                # contains the saved artifact model, ignored by git
-data/                 # dataset storage and path. Ignored by git
+- train.py              # for training, evaluating and saving artifact of models.
+- app/api.py            # Flask REST API for inference
+- app/modelLoader.py    # Helper functions to load artifact of model, and prepare input data from JSON to DataFrame
+- stream/producer.py    # File for simulator of transaction to be streamed directly to API
+- notebooks/            # contains any exploratory analysis Jupyter notebooks to analyze, and understand dataset.
+- model/                # contains the saved artifact model, ignored by git
+- data/                 # dataset storage and path. Ignored by git
