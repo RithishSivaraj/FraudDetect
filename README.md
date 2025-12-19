@@ -1,6 +1,6 @@
 # Fraud Detection with SMOTE + Streaming + Flask API - An End-to-End Pipeline
 
-This project, contains an end-to-end fraud detection system. The pipeline trains imbalanced-learning models - both baseline, and SMOTE-enhanced, and selects an optimal class decision threshold based on the validation. Then, it saves a deployable model artifact, a sort of instance of the best model, and services real-time predictions, via a Flask REST API. It also includes a simulator, which streams each record as individiual transaction, to the API.
+This project contains an end-to-end fraud detection system. The pipeline trains imbalanced-learning models - both baseline, and SMOTE-enhanced, and selects an optimal class decision threshold based on the validation. Then, it saves a deployable model artifact, a sort of instance of the best model, and services real-time predictions, via a Flask REST API. It also includes a simulator, which streams each record as individiual transaction, to the API.
 
 ## Some Highlights:
 - **Imbalanced class classifaction** - Through EDA, it is found that there is ~0.17% fraud rate, indicative of a highly skewed target.
@@ -39,7 +39,7 @@ For this project, I chose to use the **Credit Card Fraud Detection** dataset, na
 - Test Fraud Recall (Class 1): 0.7551
 - Validation Threshold: 0.1313
 
-Choosing these metrics as accuracy is misleading with extreme class imbalance, as seen with this dataset, and PR-AUC/Recall reflect performance stats better on fraud cases, were existence of fraud is rare.
+Choosing these metrics as accuracy is misleading with extreme class imbalance, as seen with this dataset, and PR-AUC/Recall reflect performance stats better on fraud cases, where existence of fraud is rare.
 
 ## How it all works?
 The pipeline follows a few simple but powerful steps:
