@@ -48,12 +48,46 @@ After confirming dataset specific features and problems you would face, and afte
    - splits the dataset into train/val/test, and scales features.
    - Then apply SMOTE only for training set.
    - Train the different candidate pipelines (Used Logistic regression and Random Forest Classifier for the above)
-   - Select the best model using the validation metrics
-   - Save the model into model/best_model.pkl to be loaded into API later.
+   - Select the best model using the validation metrics (PR-AUC and F1 score).
+   - Save the model into model/best_model.pkl to be loaded into a Flask API later.
 2. app/api.py -
    - Loads the artifact of model
    - Only loads once at startup initialization
    - exposes /predict.
 3. stream/producer.py -
-   - Streams each record from the dataset as transactions into the loaded model in API, in order to simulate live transactions.
+   - Streams each record from the dataset as transactions into the loaded model in API, in order to simulate live transactions, using an HTTP-based producer.
+  
+## Setup and Installation
+1. Create the virtual environment
+   ''' bash
+   python -m venv. venv
+   source .venv/bin/activate
+2. Install the dependent resources
+   pip install -r reqs.txt
+3. Add the dataset to local directory
+   data/raw/creditcard.csv
+4. Train the model, and save artifact of best model with
+   python train.py
+5. Run the API
+   python -m app.api
+   Note: Keep API running in a terminal and now open a separate terminal
+6. Run the producer (in the second terminal, while API is running)
+   python stream/producer.py
+
+## General Info
+Why is a baseline LR model chosen?
+- The model selection is automated based on the validation metrics, particulary PR-AUC and the F1 score. After comparing the 4 candidates, LR and RF under baseline and SMOTE-enhanced, it was found the metrics of baseline LR, outperformed the other models, and was selected as the best model. This may change, depending on different metrics, or a different dataset.
+
+How to prove model is not experiencing majority class baseline problem?
+- Due to the extreme class imbalance, the model could always predict false, and still be 99.83% accurate! I ensured that this wasn't the case by sampling the model with a recorded transaction, confirmed as fraud. The model accurately predicted fraud as true!
+
+## Future Improvements to be made:
+- Use Dockerfile and docker-compose for one-command deployment
+- Better logging and request IDs
+- Unit testing for request validation and model loading.
+
+Come back in the future to see more updates!
+
+### Version
+1.0
   
