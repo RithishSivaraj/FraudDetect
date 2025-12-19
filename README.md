@@ -30,3 +30,14 @@ For this project, I chose to use the **Credit Card Fraud Detection** dataset, na
 - notebooks/            # contains any exploratory analysis Jupyter notebooks to analyze, and understand dataset.
 - model/                # contains the saved artifact model, ignored by git
 - data/                 # dataset storage and path. Ignored by git
+
+## Results:
+- Fraud Rate: ~0.17%
+- Best Model: Logistic Regression, Baseline (lr_baseline) *More details below*
+- Test ROC-AUC: 0.9772945545691546
+- Test PR-AUC: 0.758575150867945
+- Test Fraud Recall (Class 1): 0.7551
+- Validation Threshold: 0.1313
+
+Choosing these metrics as accuracy is misleading with extreme class imbalance, as seen with this dataset, and PR-AUC/Recall reflect performance stats better on fraud cases, were existence of fraud is rare.
+
